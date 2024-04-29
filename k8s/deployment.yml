@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: kunchalavikram/deployment_strategies_demo:v1
+        image: kunchalavikram/deployment_strategies_demo:v2
         ports:
         - name: http
           containerPort: 5000
