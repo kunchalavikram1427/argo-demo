@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: job-demo
+  name: job-demo-22
 spec:
   completions: 1
   template:
@@ -16,4 +16,4 @@ spec:
         - -c
         - |
           import os
-          print("Hello world")
+          print("Hello world22")
