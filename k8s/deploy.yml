@@ -12,7 +12,7 @@ spec:
       labels:
         app: downwardapi
       annotations:
-        build: seven
+        build: one
     spec:
       revisionHistoryLimit: 1
       containers:
