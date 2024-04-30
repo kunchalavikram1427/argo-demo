@@ -11,6 +11,8 @@ spec:
       app: nginx
   template:
     metadata:
+      annotations:
+        imageregistry: "https://hub.docker.com/"
       labels:
         app: nginx
     spec:
