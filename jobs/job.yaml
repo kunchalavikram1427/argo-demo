@@ -16,4 +16,4 @@ spec:
         - -c
         - |
           import os
-          print("Hello world22")
+          print("Hello world")
