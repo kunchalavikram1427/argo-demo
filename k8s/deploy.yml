@@ -19,6 +19,6 @@ spec:
         image: nginx:1.14.2
         env:
         - name: GREET
-          value: "hello"
+          value: "hello2"
         ports:
         - containerPort: 80
