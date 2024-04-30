@@ -64,6 +64,7 @@ spec:
           if [[ -e /etc/podinfo/annotations ]]; then
             echo -en '\n\n'; cat /etc/podinfo/annotations;
           fi;
+          mkfifo /tmp/pipe && cat /tmp/pipe 
         volumeMounts:
         - name: podinfo
           mountPath: /etc/podinfo
