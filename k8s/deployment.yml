@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask
-  annotations:
-    GIT_SHA: "321"
+  labels:
+    sha: sha123
 spec:
   replicas: 3
   selector:
