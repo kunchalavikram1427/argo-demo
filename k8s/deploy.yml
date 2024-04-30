@@ -24,16 +24,55 @@
 #           value: "hello2"
 #         ports:
 #         - containerPort: 80
+# ---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: annotations-demo
+#   annotations:
+#     imageregistry: "2"
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx:1.14.2
+#     ports:
+#     - containerPort: 80
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: annotations-demo
-  annotations:
-    imageregistry: "2"
+  name: downwardapi-deployment
 spec:
-  containers:
-  - name: nginx
-    image: nginx:1.14.2
-    ports:
-    - containerPort: 80
+  replicas: 1
+  selector:
+    matchLabels:
+      app: downwardapi
+  template:
+    metadata:
+      labels:
+        app: downwardapi
+      annotations:
+        build: one
+        sha: one
+    spec:
+      containers:
+      - name: client-container
+        image: registry.k8s.io/busybox
+        command: ["sh", "-c"]
+        args:
+        - |
+          if [[ -e /etc/podinfo/annotations ]]; then
+            echo -en '\n\n'; cat /etc/podinfo/annotations;
+          fi;
+        volumeMounts:
+        - name: podinfo
+          mountPath: /etc/podinfo
+      volumes:
+      - name: podinfo
+        downwardAPI:
+          items:
+          - path: "annotations"
+            fieldRef:
+              fieldPath: metadata.annotations
+
+
