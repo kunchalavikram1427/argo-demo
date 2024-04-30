@@ -12,7 +12,7 @@ spec:
       labels:
         app: downwardapi
       annotations:
-        build: four
+        build: six
     spec:
       containers:
       - name: client-container
