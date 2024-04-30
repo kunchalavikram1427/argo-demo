@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: flask
   annotations:
-    GIT_SHA: "123"
+    GIT_SHA: "321"
 spec:
   replicas: 3
   selector:
