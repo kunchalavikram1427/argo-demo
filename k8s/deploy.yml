@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       annotations:
-        imageregistry: "https://hub.docker.com/"
+        imageregistry: "https://test.docker.com/"
       labels:
         app: nginx
     spec:
