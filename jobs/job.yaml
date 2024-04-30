@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-demo
+spec:
+  completions: 1
+  template:
+    spec:
+      restartPolicy: Never
+      ttlSecondsAfterFinished: 100
+      containers:
+      - name: example
+        image: python
+        command:
+        - python3
+        - -c
+        - |
+          import os
+          print("Hello world")
