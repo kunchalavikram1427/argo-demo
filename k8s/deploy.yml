@@ -52,8 +52,8 @@ spec:
       labels:
         app: downwardapi
       annotations:
-        build: 3
-        sha: 4
+        build: one
+        sha: one
     spec:
       containers:
       - name: client-container
