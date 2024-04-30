@@ -12,8 +12,9 @@ spec:
       labels:
         app: downwardapi
       annotations:
-        build: six
+        build: seven
     spec:
+      revisionHistoryLimit: 1
       containers:
       - name: client-container
         image: registry.k8s.io/busybox
