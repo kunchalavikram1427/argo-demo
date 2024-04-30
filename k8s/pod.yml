@@ -10,7 +10,7 @@ spec:
     image: kunchalavikram/deployment_strategies_demo:v2
     env:
     - name: DEMO_GREETING
-      value: "Hello from the environment"
+      value: "Hello from the environmentq"
     ports:
     - name: http
       containerPort: 5000
