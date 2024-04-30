@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: flask
   labels:
-    app: flask
+    app: flask2
 spec:
   containers:
   - name: flask
