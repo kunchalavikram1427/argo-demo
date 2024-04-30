@@ -5,14 +5,14 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
   template:
     metadata:
       annotations:
-        imageregistry: "1"
+        imageregistry: "2222"
       labels:
         app: nginx
     spec:
