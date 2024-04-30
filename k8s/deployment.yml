@@ -1,22 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
   name: flask
   labels:
-    sha: sha123
+    app: flask
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: flask
-  template:
-    metadata:
-      labels:
-        app: flask
-    spec:
-      containers:
-      - name: flask
-        image: kunchalavikram/deployment_strategies_demo:v2
-        ports:
-        - name: http
-          containerPort: 5000
+  containers:
+  - name: flask
+    image: kunchalavikram/deployment_strategies_demo:v2
+    ports:
+    - name: http
+      containerPort: 5000
